@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
   (function () {
@@ -12,7 +12,7 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ÆLATOV — Travel Hub</title>
+  <title>ÆLATOV — Travel &amp; Studio Hub</title>
   <style>
     :root {
       --bg: #0c0d10;
@@ -26,16 +26,63 @@
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "Noto Sans SC", "Noto Naskh Arabic", sans-serif;
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
+      padding: 20px 16px 36px;
+    }
+    .topbar {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto 28px;
+      display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 24px 16px;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .nav a:hover { color: var(--text); }
+    .lang-box {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.82rem;
+      color: var(--text);
+    }
+    .lang-box select {
+      background: transparent;
+      color: var(--text);
+      border: none;
+      outline: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .lang-box option {
+      background: var(--card);
+      color: var(--text);
     }
     .wrap {
       width: 100%;
       max-width: 440px;
+      margin: auto;
     }
     .brand {
       font-size: 2rem;
@@ -73,31 +120,215 @@
       border-color: var(--accent);
       transform: translateY(-1px);
     }
+    .meta {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 400;
+      margin-top: 3px;
+    }
     .arrow { color: var(--muted); font-size: 1.1rem; }
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <nav class="nav" aria-label="Primary">
+      <a href="services.html" data-i18n="navServices">Services / Work</a>
+      <a href="about.html" data-i18n="navAbout">About</a>
+      <a href="contact.html" data-i18n="navContact">Contact / Book</a>
+    </nav>
+    <label class="lang-box" for="langSelect" aria-label="Language">
+      <span>🌐</span>
+      <select id="langSelect">
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="ru">Русский</option>
+        <option value="es">Español</option>
+        <option value="ar">العربية</option>
+        <option value="fr">Français</option>
+        <option value="zh">简体中文</option>
+        <option value="pt">Português</option>
+      </select>
+    </label>
+  </header>
+
   <main class="wrap">
     <div class="brand">ÆLATOV</div>
-    <p class="sub">Curated travel essentials &amp; instant bookings</p>
+    <p class="sub" data-i18n="sub">Curated travel essentials &amp; instant bookings</p>
     <div class="links">
-      <a class="btn" href="https://YOUR-GETYOURGUIDE-TRACKER-LINK" target="_blank" rel="noopener">
-        <span>🎟️ Tours &amp; Activities</span>
+      <a class="btn" href="tours.html">
+        <div>
+          <span data-i18n="b1Title">🎟️ Tours &amp; Activities</span>
+          <span class="meta" data-i18n="b1Meta">Guided experiences, skip-the-line tickets &amp; day trips</span>
+        </div>
         <span class="arrow">→</span>
       </a>
-      <a class="btn" href="https://YOUR-AIRALO-OR-SAILY-TRACKER-LINK" target="_blank" rel="noopener">
-        <span>📶 Instant eSIM</span>
+      <a class="btn" href="esim.html">
+        <div>
+          <span data-i18n="b2Title">📶 Instant eSIM</span>
+          <span class="meta" data-i18n="b2Meta">Mobile data plans ready before you land</span>
+        </div>
         <span class="arrow">→</span>
       </a>
-      <a class="btn" href="https://YOUR-THIRD-TRACKER-LINK" target="_blank" rel="noopener">
-        <span>✈️ Flights &amp; Transfers</span>
+      <a class="btn" href="flights.html">
+        <div>
+          <span data-i18n="b3Title">✈️ Flights &amp; Transfers</span>
+          <span class="meta" data-i18n="b3Meta">Routes, airport pickups &amp; transit connections</span>
+        </div>
         <span class="arrow">→</span>
       </a>
-      <a class="btn" href="https://YOUR-FOURTH-TRACKER-LINK" target="_blank" rel="noopener">
-        <span>🏨 Stays &amp; Passes</span>
+      <a class="btn" href="stays.html">
+        <div>
+          <span data-i18n="b4Title">🏨 Stays &amp; Passes</span>
+          <span class="meta" data-i18n="b4Meta">Hotels, apartments &amp; city passes</span>
+        </div>
         <span class="arrow">→</span>
       </a>
     </div>
   </main>
+
+  <script>
+    const I18N = {
+      en: {
+        dir: "ltr",
+        navServices: "Services / Work",
+        navAbout: "About",
+        navContact: "Contact / Book",
+        sub: "Curated travel essentials & instant bookings",
+        b1Title: "🎟️ Tours & Activities",
+        b1Meta: "Guided experiences, skip-the-line tickets & day trips",
+        b2Title: "📶 Instant eSIM",
+        b2Meta: "Mobile data plans ready before you land",
+        b3Title: "✈️ Flights & Transfers",
+        b3Meta: "Routes, airport pickups & transit connections",
+        b4Title: "🏨 Stays & Passes",
+        b4Meta: "Hotels, apartments & city passes"
+      },
+      ko: {
+        dir: "ltr",
+        navServices: "서비스 / 작업",
+        navAbout: "소개",
+        navContact: "문의 / 예약",
+        sub: "엄선된 여행 필수 아이템과 즉시 예약",
+        b1Title: "🎟️ 투어 및 액티비티",
+        b1Meta: "가이드 투어, 우선 입장권 및 당일 여행",
+        b2Title: "📶 즉시 eSIM",
+        b2Meta: "도착 전 준비하는 모바일 데이터 요금제",
+        b3Title: "✈️ 항공 및 이동",
+        b3Meta: "노선, 공항 픽업 및 환승 연결",
+        b4Title: "🏨 숙소 및 패스",
+        b4Meta: "호텔, 아파트 및 도시 패스"
+      },
+      ru: {
+        dir: "ltr",
+        navServices: "Услуги / Работы",
+        navAbout: "О проекте",
+        navContact: "Контакт / Бронь",
+        sub: "Отобранные essentials для поездок и быстрое бронирование",
+        b1Title: "🎟️ Экскурсии и активности",
+        b1Meta: "Гиды, билеты без очереди и однодневные поездки",
+        b2Title: "📶 Мгновенная eSIM",
+        b2Meta: "Мобильный интернет до прилёта",
+        b3Title: "✈️ Перелёты и трансферы",
+        b3Meta: "Маршруты, встречи в аэропорту и пересадки",
+        b4Title: "🏨 Жильё и пассы",
+        b4Meta: "Отели, апартаменты и городские карты"
+      },
+      es: {
+        dir: "ltr",
+        navServices: "Servicios / Trabajo",
+        navAbout: "Acerca de",
+        navContact: "Contacto / Reservar",
+        sub: "Esenciales de viaje seleccionados y reservas al instante",
+        b1Title: "🎟️ Tours y Actividades",
+        b1Meta: "Experiencias guiadas, entradas sin fila y excursiones",
+        b2Title: "📶 eSIM Instantánea",
+        b2Meta: "Planes de datos listos antes de aterrizar",
+        b3Title: "✈️ Vuelos y Traslados",
+        b3Meta: "Rutas, traslados al aeropuerto y conexiones",
+        b4Title: "🏨 Alojamientos y Pases",
+        b4Meta: "Hoteles, apartamentos y pases urbanos"
+      },
+      ar: {
+        dir: "rtl",
+        navServices: "الخدمات / الأعمال",
+        navAbout: "نبذة عنا",
+        navContact: "تواصل / احجز",
+        sub: "أساسيات السفر المختارة وحجوزات فورية",
+        b1Title: "🎟️ جولات وأنشطة",
+        b1Meta: "تجارب بإرشاد، تذاكر دخول سريع ورحلات يومية",
+        b2Title: "📶 شريحة eSIM فورية",
+        b2Meta: "باقات بيانات جاهزة قبل الوصول",
+        b3Title: "✈️ رحلات وتنقلات",
+        b3Meta: "مسارات، استقبال من المطار وتوصيلات",
+        b4Title: "🏨 إقامة وبطاقات",
+        b4Meta: "فنادق، شقق وبطاقات المدن"
+      },
+      fr: {
+        dir: "ltr",
+        navServices: "Services / Travaux",
+        navAbout: "À propos",
+        navContact: "Contact / Réserver",
+        sub: "Essentiels de voyage sélectionnés et réservations rapides",
+        b1Title: "🎟️ Visites & Activités",
+        b1Meta: "Expériences guidées, billets coupe-file & excursions",
+        b2Title: "📶 eSIM Instantanée",
+        b2Meta: "Forfaits data prêts avant l'atterrissage",
+        b3Title: "✈️ Vols & Transferts",
+        b3Meta: "Itinéraires, navettes aéroport & correspondances",
+        b4Title: "🏨 Hébergements & Pass",
+        b4Meta: "Hôtels, appartements & city pass"
+      },
+      zh: {
+        dir: "ltr",
+        navServices: "服务 / 作品",
+        navAbout: "关于",
+        navContact: "联系 / 预约",
+        sub: "精选出行必备与即时预订",
+        b1Title: "🎟️ 观光与活动",
+        b1Meta: "导览体验、免排队门票与一日游",
+        b2Title: "📶 即时 eSIM",
+        b2Meta: "落地前即可开通的流量套餐",
+        b3Title: "✈️ 机票与接送",
+        b3Meta: "航线、机场接送与中转衔接",
+        b4Title: "🏨 住宿与通票",
+        b4Meta: "酒店、公寓与城市通票"
+      },
+      pt: {
+        dir: "ltr",
+        navServices: "Serviços / Trabalhos",
+        navAbout: "Sobre",
+        navContact: "Contato / Reservar",
+        sub: "Essenciais de viagem selecionados e reservas rápidas",
+        b1Title: "🎟️ Passeios e Atividades",
+        b1Meta: "Experiências guiadas, ingressos sem fila e bate-volta",
+        b2Title: "📶 eSIM Instantâneo",
+        b2Meta: "Planos de dados prontos antes do pouso",
+        b3Title: "✈️ Voos e Transfers",
+        b3Meta: "Rotas, transfer de aeroporto e conexões",
+        b4Title: "🏨 Hospedagem e Passes",
+        b4Meta: "Hotéis, apartamentos e passes de cidade"
+      }
+    };
+
+    const selectEl = document.getElementById("langSelect");
+    function applyLang(lang) {
+      const pack = I18N[lang] || I18N.en;
+      document.documentElement.lang = lang;
+      document.documentElement.dir = pack.dir;
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (pack[key]) el.textContent = pack[key];
+      });
+      try { localStorage.setItem("aelatov_lang", lang); } catch (_) {}
+    }
+
+    selectEl.addEventListener("change", (e) => applyLang(e.target.value));
+    const saved = (() => { try { return localStorage.getItem("aelatov_lang"); } catch (_) { return null; } })();
+    if (saved && I18N[saved]) {
+      selectEl.value = saved;
+      applyLang(saved);
+    }
+  </script>
 </body>
 </html>
