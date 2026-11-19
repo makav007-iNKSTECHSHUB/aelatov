@@ -1,1 +1,94 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÆLATOV — Travel Hub</title>
+  <style>
+    :root {
+      --bg: #0c0d10;
+      --card: #15171c;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --border: #262932;
+      --accent: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+    .wrap {
+      width: 100%;
+      max-width: 440px;
+    }
+    .brand {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .sub {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--card);
+      color: var(--text);
+      text-decoration: none;
+      padding: 16px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      font-size: 1rem;
+      transition: transform 0.12s ease, border-color 0.12s ease;
+    }
+    .btn:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .arrow { color: var(--muted); font-size: 1.1rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="brand">ÆLATOV</div>
+    <p class="sub">Curated travel essentials &amp; instant bookings</p>
+    <div class="links">
+      <a class="btn" href="https://YOUR-GETYOURGUIDE-TRACKER-LINK" target="_blank" rel="noopener">
+        <span>🎟️ Tours &amp; Activities</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="btn" href="https://YOUR-AIRALO-OR-SAILY-TRACKER-LINK" target="_blank" rel="noopener">
+        <span>📶 Instant eSIM</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="btn" href="https://YOUR-THIRD-TRACKER-LINK" target="_blank" rel="noopener">
+        <span>✈️ Flights &amp; Transfers</span>
+        <span class="arrow">→</span>
+      </a>
+      <a class="btn" href="https://YOUR-FOURTH-TRACKER-LINK" target="_blank" rel="noopener">
+        <span>🏨 Stays &amp; Passes</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </main>
+</body>
+</html>
