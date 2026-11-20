@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+  <meta name="google-site-verification" content="vFOzng7G0gdMFacB8jGvTF5JSjCl13YHsiaGMvXUJzY" />
   <script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
   (function () {
       var script = document.createElement("script");
@@ -520,7 +521,7 @@
             "• Travel Bridge & Booking Hub — Direct access to tours, connectivity, transit & stays in one dark hub"
           ],
           ctaLabel: "Contact / Book →",
-          ctaHref: "#contact",
+          ctaHref: "#/view/contact",
           external: false
         },
         about: {
@@ -532,7 +533,7 @@
             "• Structured for batch workflows and direct next steps"
           ],
           ctaLabel: "See Services / Work →",
-          ctaHref: "#services",
+          ctaHref: "#/view/services",
           external: false
         },
         contact: {
@@ -565,9 +566,4 @@
       }
 
       function renderSection(key) {
-        const data = SECTIONS[key];
-        if (!data) {
-          renderHub();
-          return;
-        }
-        panelTag.textContent =
+        const data = SECTIONS
