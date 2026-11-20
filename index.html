@@ -36,7 +36,7 @@
     }
     .topbar {
       width: 100%;
-      max-width: 520px;
+      max-width: 540px;
       margin: 0 auto 24px;
       display: flex;
       align-items: center;
@@ -86,7 +86,7 @@
     }
     .wrap {
       width: 100%;
-      max-width: 460px;
+      max-width: 480px;
       margin: auto;
     }
     .brand {
@@ -198,6 +198,12 @@
       border-radius: 10px;
       padding: 12px 14px;
       font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .cta-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     .cta {
       display: block;
@@ -208,6 +214,18 @@
       padding: 14px 18px;
       border-radius: 10px;
       font-weight: 700;
+    }
+    .cta-secondary {
+      display: block;
+      text-align: center;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.92rem;
     }
   </style>
 </head>
@@ -262,10 +280,10 @@
 
         <button type="button" class="btn" data-open="flights">
           <div class="btn-left">
-            <span>✈️</span>
+            <span>🚗</span>
             <div>
-              <span data-i18n="b3Title">Flights &amp; Transfers</span>
-              <span class="meta" data-i18n="b3Meta">Routes, airport pickups &amp; transit connections</span>
+              <span data-i18n="b3Title">Car Hire &amp; Transfers</span>
+              <span class="meta" data-i18n="b3Meta">AutoEurope car rentals, routes &amp; airport pickups</span>
             </div>
           </div>
           <span class="arrow">→</span>
@@ -305,7 +323,7 @@
       <h1 id="panelTitle"></h1>
       <p id="panelDesc"></p>
       <ul id="panelList" class="bullets"></ul>
-      <a id="panelCta" class="cta" href="https://t.me/aelatov" target="_blank" rel="noopener noreferrer"></a>
+      <div id="panelCtas" class="cta-stack"></div>
     </section>
   </main>
 
@@ -322,8 +340,8 @@
           b1Meta: "Guided experiences, skip-the-line tickets & day trips",
           b2Title: "Instant eSIM",
           b2Meta: "Mobile data plans ready before you land",
-          b3Title: "Flights & Transfers",
-          b3Meta: "Routes, airport pickups & transit connections",
+          b3Title: "Car Hire & Transfers",
+          b3Meta: "AutoEurope car rentals, routes & airport pickups",
           b4Title: "Stays & Passes",
           b4Meta: "Hotels, apartments & city passes",
           b5Title: "Telegram (@aelatov)",
@@ -340,8 +358,8 @@
           b1Meta: "가이드 투어, 우선 입장권 및 당일 여행",
           b2Title: "즉시 eSIM",
           b2Meta: "도착 전 준비하는 모바일 데이터 요금제",
-          b3Title: "항공 및 이동",
-          b3Meta: "노선, 공항 픽업 및 환승 연결",
+          b3Title: "렌터카 및 이동",
+          b3Meta: "AutoEurope 렌터카, 노선 및 공항 픽업",
           b4Title: "숙소 및 패스",
           b4Meta: "호텔, 아파트 및 도시 패스",
           b5Title: "텔레그램 (@aelatov)",
@@ -358,8 +376,8 @@
           b1Meta: "Гиды, билеты без очереди и однодневные поездки",
           b2Title: "Мгновенная eSIM",
           b2Meta: "Мобильный интернет до прилёта",
-          b3Title: "Перелёты и трансферы",
-          b3Meta: "Маршруты, встречи в аэропорту и пересадки",
+          b3Title: "Авто и трансферы",
+          b3Meta: "Аренда авто AutoEurope, маршруты и трансферы",
           b4Title: "Жильё и пассы",
           b4Meta: "Отели, апартаменты и городские карты",
           b5Title: "Telegram (@aelatov)",
@@ -376,8 +394,8 @@
           b1Meta: "Experiencias guiadas, entradas sin fila y excursiones",
           b2Title: "eSIM Instantánea",
           b2Meta: "Planes de datos listos antes de aterrizar",
-          b3Title: "Vuelos y Traslados",
-          b3Meta: "Rutas, traslados al aeropuerto y conexiones",
+          b3Title: "Autos y Traslados",
+          b3Meta: "Alquiler AutoEurope, rutas y traslados",
           b4Title: "Alojamientos y Pases",
           b4Meta: "Hoteles, apartamentos y pases urbanos",
           b5Title: "Telegram (@aelatov)",
@@ -394,8 +412,8 @@
           b1Meta: "تجارب بإرشاد، تذاكر دخول سريع ورحلات يومية",
           b2Title: "شريحة eSIM فورية",
           b2Meta: "باقات بيانات جاهزة قبل الوصول",
-          b3Title: "رحلات وتنقلات",
-          b3Meta: "مسارات، استقبال من المطار وتوصيلات",
+          b3Title: "تأجير سيارات وتنقلات",
+          b3Meta: "تأجير AutoEurope، مسارات وتوصيلات",
           b4Title: "إقامة وبطاقات",
           b4Meta: "فنادق، شقق وبطاقات المدن",
           b5Title: "تيليجرام (@aelatov)",
@@ -412,8 +430,8 @@
           b1Meta: "Expériences guidées, billets coupe-file & excursions",
           b2Title: "eSIM Instantanée",
           b2Meta: "Forfaits data prêts avant l'atterrissage",
-          b3Title: "Vols & Transferts",
-          b3Meta: "Itinéraires, navettes aéroport & correspondances",
+          b3Title: "Voitures & Transferts",
+          b3Meta: "Location AutoEurope, itinéraires & transferts",
           b4Title: "Hébergements & Pass",
           b4Meta: "Hôtels, appartements & city pass",
           b5Title: "Telegram (@aelatov)",
@@ -430,8 +448,8 @@
           b1Meta: "导览体验、免排队门票与一日游",
           b2Title: "即时 eSIM",
           b2Meta: "落地前即可开通的流量套餐",
-          b3Title: "机票与接送",
-          b3Meta: "航线、机场接送与中转衔接",
+          b3Title: "租车与接送",
+          b3Meta: "AutoEurope 租车、路线与机场接送",
           b4Title: "住宿与通票",
           b4Meta: "酒店、公寓与城市通票",
           b5Title: "Telegram (@aelatov)",
@@ -448,8 +466,8 @@
           b1Meta: "Experiências guiadas, ingressos sem fila e bate-volta",
           b2Title: "eSIM Instantâneo",
           b2Meta: "Planos de dados prontos antes do pouso",
-          b3Title: "Voos e Transfers",
-          b3Meta: "Rotas, transfer de aeroporto e conexões",
+          b3Title: "Carros e Transfers",
+          b3Meta: "Aluguel AutoEurope, rotas e transfers",
           b4Title: "Hospedagem e Passes",
           b4Meta: "Hotéis, apartamentos e passes de cidade",
           b5Title: "Telegram (@aelatov)",
@@ -468,9 +486,9 @@
             "• Local guides, food walks & excursion packages",
             "• Flexible cancellation options on eligible bookings"
           ],
-          ctaLabel: "Explore Tours & Activities →",
-          ctaHref: "https://www.getyourguide.com",
-          external: true
+          ctas: [
+            { label: "Explore Tours & Activities →", href: "https://www.getyourguide.com", external: true }
+          ]
         },
         esim: {
           tag: "ÆLATOV • Connectivity",
@@ -481,22 +499,22 @@
             "• Digital setup with no physical SIM swap needed",
             "• Keep your primary number active while using data"
           ],
-          ctaLabel: "Get Instant eSIM →",
-          ctaHref: "https://www.airalo.com",
-          external: true
+          ctas: [
+            { label: "Get Instant eSIM →", href: "https://www.airalo.com", external: true }
+          ]
         },
         flights: {
-          tag: "ÆLATOV • Transit",
-          title: "✈️ Flights & Transfers",
-          desc: "Compare flight routes and line up smooth airport transfers or point-to-point rides before your trip.",
+          tag: "ÆLATOV • Car Hire & Transit",
+          title: "🚗 Car Hire & Transfers",
+          desc: "Book rental cars through AutoEurope or plan smooth airport pickups and travel connections.",
           items: [
-            "• One-way, round-trip & multi-city flight search",
-            "• Pre-arranged airport pickups & private transfers",
-            "• Clear route planning from terminal to hotel"
+            "• AutoEurope car rental bookings & pickup planning",
+            "• Clear route planning from terminal to hotel",
+            "• Direct access to partner booking pages"
           ],
-          ctaLabel: "Search Flights & Transfers →",
-          ctaHref: "https://www.aviasales.com",
-          external: true
+          ctas: [
+            { label: "Book Car Hire on AutoEurope →", href: "https://autoeurope.tp.st/3bUUQzkm", external: true }
+          ]
         },
         stays: {
           tag: "ÆLATOV • Accommodation",
@@ -507,63 +525,43 @@
             "• City passes & bundled travel perks",
             "• Easy comparison by location and rating"
           ],
-          ctaLabel: "Browse Stays & Passes →",
-          ctaHref: "https://www.booking.com",
-          external: true
+          ctas: [
+            { label: "Browse Stays & Passes →", href: "https://www.booking.com", external: true }
+          ]
         },
         services: {
           tag: "ÆLATOV • Capabilities",
           title: "Services / Work",
-          desc: "Focused visual, editorial, and travel-curated deliverables built for clarity and fast execution.",
+          desc: "Clean visual direction, creative media production, and curated travel booking access under one roof.",
           items: [
-            "• Visual & Editorial Direction — Minimalist layouts, typographic identity systems & structured campaign assets",
-            "• Video, Photography & Sound — Short-form visual storytelling, scene pacing & atmospheric sound design",
-            "• Travel Bridge & Booking Hub — Direct access to tours, connectivity, transit & stays in one dark hub"
+            "• Visual & Editorial Direction — Minimalist layouts, clean typography, and structured brand assets.",
+            "• Video, Photography & Sound — Visual pacing, scene composition, and atmospheric sound design.",
+            "• Travel & Booking Access — Curated travel links, AutoEurope car hire, and fast mobile navigation."
           ],
-          ctaLabel: "Contact / Book →",
-          ctaHref: "#/view/contact",
-          external: false
+          ctas: [
+            { label: "Go to Book →", href: "#/view/contact", external: false }
+          ]
         },
         about: {
           tag: "ÆLATOV • Overview",
           title: "About ÆLATOV",
-          desc: "ÆLATOV brings together clean visual identity, disciplined creative work, and practical travel booking shortcuts without clutter or bloated menus.",
+          desc: "ÆLATOV is built around clarity, zero clutter, and practical access—combining creative work with direct travel essentials.",
           items: [
-            "• Built for fast mobile loading and zero visual noise",
-            "• Structured for batch workflows and direct next steps"
+            "• Direct & Minimal — Built to load fast on mobile without heavy menus or distracting noise.",
+            "• Practical Structure — Clear sections for Services / Work, About, Contact, and Book."
           ],
-          ctaLabel: "See Services / Work →",
-          ctaHref: "#/view/services",
-          external: false
+          ctas: [
+            { label: "View Services / Work →", href: "#/view/services", external: false }
+          ]
         },
         contact: {
-          tag: "ÆLATOV • Direct",
-          title: "Contact / Book",
-          desc: "Share your project brief, dates, or booking inquiry in one direct message.",
+          tag: "ÆLATOV • Support & Booking",
+          title: "Contact & Book",
+          desc: "Need support, have a question about a service, or want to book? Reach our support and booking desk directly.",
           items: [
-            "• Single direct channel for project & booking inquiries"
+            "• Support & Inquiries: makav007@gmail.com — Send your message, dates, or service request for a direct reply.",
+            "• Booking Desk: Use the booking action below to start a request or jump to travel & car hire booking."
           ],
-          ctaLabel: "Send Direct Inquiry →",
-          ctaHref: "mailto:makav007@gmail.com?subject=%C3%86LATOV%20Inquiry",
-          external: true
-        }
-      };
-
-      const hubView = document.getElementById("hubView");
-      const panelView = document.getElementById("panelView");
-      const panelTag = document.getElementById("panelTag");
-      const panelTitle = document.getElementById("panelTitle");
-      const panelDesc = document.getElementById("panelDesc");
-      const panelList = document.getElementById("panelList");
-      const panelCta = document.getElementById("panelCta");
-      const backBtn = document.getElementById("backBtn");
-      const selectEl = document.getElementById("langSelect");
-
-      function renderHub() {
-        panelView.classList.remove("active");
-        hubView.classList.remove("hidden");
-        document.querySelectorAll(".nav button").forEach((b) => b.classList.remove("active"));
-      }
-
-      function renderSection(key) {
-        const data = SECTIONS
+          ctas: [
+            { label: "Book / Email Support (makav007@gmail.com) →", href: "mailto:makav007@gmail.com?subject=%C3%86LATOV%20Booking%20%26%20Support%20Request", external: true },
+            { label: "Book Car Hire (AutoEurope) →", href: "https://autoeurope.tp.st/3bUUQzkm", external: true, secondary: 
