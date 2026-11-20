@@ -21,6 +21,7 @@
       --muted: #9ca3af;
       --border: #262932;
       --accent: #ffffff;
+      --tg: #2aabee;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -113,6 +114,7 @@
       justify-content: space-between;
       background: var(--card);
       color: var(--text);
+      text-decoration: none;
       padding: 16px 18px;
       border-radius: 12px;
       border: 1px solid var(--border);
@@ -124,6 +126,26 @@
     .btn:hover {
       border-color: var(--accent);
       transform: translateY(-1px);
+    }
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tg-badge {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--tg);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .tg-badge svg {
+      width: 13px;
+      height: 13px;
+      fill: #ffffff;
     }
     .meta {
       display: block;
@@ -216,40 +238,63 @@
       <p class="sub" data-i18n="sub">Curated travel essentials &amp; instant bookings</p>
       <div class="links">
         <button type="button" class="btn" data-open="tours">
-          <div>
-            <span data-i18n="b1Title">🎟️ Tours &amp; Activities</span>
-            <span class="meta" data-i18n="b1Meta">Guided experiences, skip-the-line tickets &amp; day trips</span>
+          <div class="btn-left">
+            <span>🎟️</span>
+            <div>
+              <span data-i18n="b1Title">Tours &amp; Activities</span>
+              <span class="meta" data-i18n="b1Meta">Guided experiences, skip-the-line tickets &amp; day trips</span>
+            </div>
           </div>
           <span class="arrow">→</span>
         </button>
+
         <button type="button" class="btn" data-open="esim">
-          <div>
-            <span data-i18n="b2Title">📶 Instant eSIM</span>
-            <span class="meta" data-i18n="b2Meta">Mobile data plans ready before you land</span>
+          <div class="btn-left">
+            <span>📶</span>
+            <div>
+              <span data-i18n="b2Title">Instant eSIM</span>
+              <span class="meta" data-i18n="b2Meta">Mobile data plans ready before you land</span>
+            </div>
           </div>
           <span class="arrow">→</span>
         </button>
+
         <button type="button" class="btn" data-open="flights">
-          <div>
-            <span data-i18n="b3Title">✈️ Flights &amp; Transfers</span>
-            <span class="meta" data-i18n="b3Meta">Routes, airport pickups &amp; transit connections</span>
+          <div class="btn-left">
+            <span>✈️</span>
+            <div>
+              <span data-i18n="b3Title">Flights &amp; Transfers</span>
+              <span class="meta" data-i18n="b3Meta">Routes, airport pickups &amp; transit connections</span>
+            </div>
           </div>
           <span class="arrow">→</span>
         </button>
+
         <button type="button" class="btn" data-open="stays">
-          <div>
-            <span data-i18n="b4Title">🏨 Stays &amp; Passes</span>
-            <span class="meta" data-i18n="b4Meta">Hotels, apartments &amp; city passes</span>
+          <div class="btn-left">
+            <span>🏨</span>
+            <div>
+              <span data-i18n="b4Title">Stays &amp; Passes</span>
+              <span class="meta" data-i18n="b4Meta">Hotels, apartments &amp; city passes</span>
+            </div>
           </div>
           <span class="arrow">→</span>
         </button>
-        <button type="button" class="btn" data-open="telegram">
-          <div>
-            <span data-i18n="b5Title">✈️ Telegram (@aelatov)</span>
-            <span class="meta" data-i18n="b5Meta">Updates, quick access &amp; direct Telegram hub</span>
+
+        <a class="btn" href="https://t.me/aelatov" target="_blank" rel="noopener noreferrer">
+          <div class="btn-left">
+            <span class="tg-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l16.01-6.16c.73-.3 1.4.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+              </svg>
+            </span>
+            <div>
+              <span data-i18n="b5Title">Telegram (@aelatov)</span>
+              <span class="meta" data-i18n="b5Meta">Updates, quick access &amp; direct Telegram hub</span>
+            </div>
           </div>
           <span class="arrow">→</span>
-        </button>
+        </a>
       </div>
     </section>
 
@@ -259,321 +304,270 @@
       <h1 id="panelTitle"></h1>
       <p id="panelDesc"></p>
       <ul id="panelList" class="bullets"></ul>
-      <a id="panelCta" class="cta" href="https://t.me/aelatov" target="_blank" rel="noopener"></a>
+      <a id="panelCta" class="cta" href="https://t.me/aelatov" target="_blank" rel="noopener noreferrer"></a>
     </section>
   </main>
 
   <script>
-    const I18N = {
-      en: {
-        dir: "ltr",
-        navServices: "Services / Work",
-        navAbout: "About",
-        navContact: "Contact / Book",
-        sub: "Curated travel essentials & instant bookings",
-        b1Title: "🎟️ Tours & Activities",
-        b1Meta: "Guided experiences, skip-the-line tickets & day trips",
-        b2Title: "📶 Instant eSIM",
-        b2Meta: "Mobile data plans ready before you land",
-        b3Title: "✈️ Flights & Transfers",
-        b3Meta: "Routes, airport pickups & transit connections",
-        b4Title: "🏨 Stays & Passes",
-        b4Meta: "Hotels, apartments & city passes",
-        b5Title: "✈️ Telegram (@aelatov)",
-        b5Meta: "Updates, quick access & direct Telegram hub",
-        backBtn: "← Back to ÆLATOV"
-      },
-      ko: {
-        dir: "ltr",
-        navServices: "서비스 / 작업",
-        navAbout: "소개",
-        navContact: "문의 / 예약",
-        sub: "엄선된 여행 필수 아이템과 즉시 예약",
-        b1Title: "🎟️ 투어 및 액티비티",
-        b1Meta: "가이드 투어, 우선 입장권 및 당일 여행",
-        b2Title: "📶 즉시 eSIM",
-        b2Meta: "도착 전 준비하는 모바일 데이터 요금제",
-        b3Title: "✈️ 항공 및 이동",
-        b3Meta: "노선, 공항 픽업 및 환승 연결",
-        b4Title: "🏨 숙소 및 패스",
-        b4Meta: "호텔, 아파트 및 도시 패스",
-        b5Title: "✈️ 텔레그램 (@aelatov)",
-        b5Meta: "업데이트 및 빠른 텔레그램 연결",
-        backBtn: "← ÆLATOV로 돌아가기"
-      },
-      ru: {
-        dir: "ltr",
-        navServices: "Услуги / Работы",
-        navAbout: "О проекте",
-        navContact: "Контакт / Бронь",
-        sub: "Отобранные essentials для поездок и быстрое бронирование",
-        b1Title: "🎟️ Экскурсии и активности",
-        b1Meta: "Гиды, билеты без очереди и однодневные поездки",
-        b2Title: "📶 Мгновенная eSIM",
-        b2Meta: "Мобильный интернет до прилёта",
-        b3Title: "✈️ Перелёты и трансферы",
-        b3Meta: "Маршруты, встречи в аэропорту и пересадки",
-        b4Title: "🏨 Жильё и пассы",
-        b4Meta: "Отели, апартаменты и городские карты",
-        b5Title: "✈️ Telegram (@aelatov)",
-        b5Meta: "Новости, быстрый доступ и хаб в Telegram",
-        backBtn: "← Назад в ÆLATOV"
-      },
-      es: {
-        dir: "ltr",
-        navServices: "Servicios / Trabajo",
-        navAbout: "Acerca de",
-        navContact: "Contacto / Reservar",
-        sub: "Esenciales de viaje seleccionados y reservas al instante",
-        b1Title: "🎟️ Tours y Actividades",
-        b1Meta: "Experiencias guiadas, entradas sin fila y excursiones",
-        b2Title: "📶 eSIM Instantánea",
-        b2Meta: "Planes de datos listos antes de aterrizar",
-        b3Title: "✈️ Vuelos y Traslados",
-        b3Meta: "Rutas, traslados al aeropuerto y conexiones",
-        b4Title: "🏨 Alojamientos y Pases",
-        b4Meta: "Hoteles, apartamentos y pases urbanos",
-        b5Title: "✈️ Telegram (@aelatov)",
-        b5Meta: "Novedades y acceso directo en Telegram",
-        backBtn: "← Volver a ÆLATOV"
-      },
-      ar: {
-        dir: "rtl",
-        navServices: "الخدمات / الأعمال",
-        navAbout: "نبذة عنا",
-        navContact: "تواصل / احجز",
-        sub: "أساسيات السفر المختارة وحجوزات فورية",
-        b1Title: "🎟️ جولات وأنشطة",
-        b1Meta: "تجارب بإرشاد، تذاكر دخول سريع ورحلات يومية",
-        b2Title: "📶 شريحة eSIM فورية",
-        b2Meta: "باقات بيانات جاهزة قبل الوصول",
-        b3Title: "✈️ رحلات وتنقلات",
-        b3Meta: "مسارات، استقبال من المطار وتوصيلات",
-        b4Title: "🏨 إقامة وبطاقات",
-        b4Meta: "فنادق، شقق وبطاقات المدن",
-        b5Title: "✈️ تيليجرام (@aelatov)",
-        b5Meta: "تحديثات ووصول مباشر عبر تيليجرام",
-        backBtn: "← العودة إلى ÆLATOV"
-      },
-      fr: {
-        dir: "ltr",
-        navServices: "Services / Travaux",
-        navAbout: "À propos",
-        navContact: "Contact / Réserver",
-        sub: "Essentiels de voyage sélectionnés et réservations rapides",
-        b1Title: "🎟️ Visites & Activités",
-        b1Meta: "Expériences guidées, billets coupe-file & excursions",
-        b2Title: "📶 eSIM Instantanée",
-        b2Meta: "Forfaits data prêts avant l'atterrissage",
-        b3Title: "✈️ Vols & Transferts",
-        b3Meta: "Itinéraires, navettes aéroport & correspondances",
-        b4Title: "🏨 Hébergements & Pass",
-        b4Meta: "Hôtels, appartements & city pass",
-        b5Title: "✈️ Telegram (@aelatov)",
-        b5Meta: "Mises à jour et accès direct Telegram",
-        backBtn: "← Retour à ÆLATOV"
-      },
-      zh: {
-        dir: "ltr",
-        navServices: "服务 / 作品",
-        navAbout: "关于",
-        navContact: "联系 / 预约",
-        sub: "精选出行必备与即时预订",
-        b1Title: "🎟️ 观光与活动",
-        b1Meta: "导览体验、免排队门票与一日游",
-        b2Title: "📶 即时 eSIM",
-        b2Meta: "落地前即可开通的流量套餐",
-        b3Title: "✈️ 机票与接送",
-        b3Meta: "航线、机场接送与中转衔接",
-        b4Title: "🏨 住宿与通票",
-        b4Meta: "酒店、公寓与城市通票",
-        b5Title: "✈️ Telegram (@aelatov)",
-        b5Meta: "最新动态与 Telegram 快速入口",
-        backBtn: "← 返回 ÆLATOV"
-      },
-      pt: {
-        dir: "ltr",
-        navServices: "Serviços / Trabalhos",
-        navAbout: "Sobre",
-        navContact: "Contato / Reservar",
-        sub: "Essenciais de viagem selecionados e reservas rápidas",
-        b1Title: "🎟️ Passeios e Atividades",
-        b1Meta: "Experiências guiadas, ingressos sem fila e bate-volta",
-        b2Title: "📶 eSIM Instantâneo",
-        b2Meta: "Planos de dados prontos antes do pouso",
-        b3Title: "✈️ Voos e Transfers",
-        b3Meta: "Rotas, transfer de aeroporto e conexões",
-        b4Title: "🏨 Hospedagem e Passes",
-        b4Meta: "Hotéis, apartamentos e passes de cidade",
-        b5Title: "✈️ Telegram (@aelatov)",
-        b5Meta: "Atualizações e acesso direto no Telegram",
-        backBtn: "← Voltar para ÆLATOV"
-      }
-    };
+    (function () {
+      const I18N = {
+        en: {
+          dir: "ltr",
+          navServices: "Services / Work",
+          navAbout: "About",
+          navContact: "Contact / Book",
+          sub: "Curated travel essentials & instant bookings",
+          b1Title: "Tours & Activities",
+          b1Meta: "Guided experiences, skip-the-line tickets & day trips",
+          b2Title: "Instant eSIM",
+          b2Meta: "Mobile data plans ready before you land",
+          b3Title: "Flights & Transfers",
+          b3Meta: "Routes, airport pickups & transit connections",
+          b4Title: "Stays & Passes",
+          b4Meta: "Hotels, apartments & city passes",
+          b5Title: "Telegram (@aelatov)",
+          b5Meta: "Updates, quick access & direct Telegram hub",
+          backBtn: "← Back to ÆLATOV"
+        },
+        ko: {
+          dir: "ltr",
+          navServices: "서비스 / 작업",
+          navAbout: "소개",
+          navContact: "문의 / 예약",
+          sub: "엄선된 여행 필수 아이템과 즉시 예약",
+          b1Title: "투어 및 액티비티",
+          b1Meta: "가이드 투어, 우선 입장권 및 당일 여행",
+          b2Title: "즉시 eSIM",
+          b2Meta: "도착 전 준비하는 모바일 데이터 요금제",
+          b3Title: "항공 및 이동",
+          b3Meta: "노선, 공항 픽업 및 환승 연결",
+          b4Title: "숙소 및 패스",
+          b4Meta: "호텔, 아파트 및 도시 패스",
+          b5Title: "텔레그램 (@aelatov)",
+          b5Meta: "업데이트 및 빠른 텔레그램 연결",
+          backBtn: "← ÆLATOV로 돌아가기"
+        },
+        ru: {
+          dir: "ltr",
+          navServices: "Услуги / Работы",
+          navAbout: "О проекте",
+          navContact: "Контакт / Бронь",
+          sub: "Отобранные essentials для поездок и быстрое бронирование",
+          b1Title: "Экскурсии и активности",
+          b1Meta: "Гиды, билеты без очереди и однодневные поездки",
+          b2Title: "Мгновенная eSIM",
+          b2Meta: "Мобильный интернет до прилёта",
+          b3Title: "Перелёты и трансферы",
+          b3Meta: "Маршруты, встречи в аэропорту и пересадки",
+          b4Title: "Жильё и пассы",
+          b4Meta: "Отели, апартаменты и городские карты",
+          b5Title: "Telegram (@aelatov)",
+          b5Meta: "Новости, быстрый доступ и хаб в Telegram",
+          backBtn: "← Назад в ÆLATOV"
+        },
+        es: {
+          dir: "ltr",
+          navServices: "Servicios / Trabajo",
+          navAbout: "Acerca de",
+          navContact: "Contacto / Reservar",
+          sub: "Esenciales de viaje seleccionados y reservas al instante",
+          b1Title: "Tours y Actividades",
+          b1Meta: "Experiencias guiadas, entradas sin fila y excursiones",
+          b2Title: "eSIM Instantánea",
+          b2Meta: "Planes de datos listos antes de aterrizar",
+          b3Title: "Vuelos y Traslados",
+          b3Meta: "Rutas, traslados al aeropuerto y conexiones",
+          b4Title: "Alojamientos y Pases",
+          b4Meta: "Hoteles, apartamentos y pases urbanos",
+          b5Title: "Telegram (@aelatov)",
+          b5Meta: "Novedades y acceso directo en Telegram",
+          backBtn: "← Volver a ÆLATOV"
+        },
+        ar: {
+          dir: "rtl",
+          navServices: "الخدمات / الأعمال",
+          navAbout: "نبذة عنا",
+          navContact: "تواصل / احجز",
+          sub: "أساسيات السفر المختارة وحجوزات فورية",
+          b1Title: "جولات وأنشطة",
+          b1Meta: "تجارب بإرشاد، تذاكر دخول سريع ورحلات يومية",
+          b2Title: "شريحة eSIM فورية",
+          b2Meta: "باقات بيانات جاهزة قبل الوصول",
+          b3Title: "رحلات وتنقلات",
+          b3Meta: "مسارات، استقبال من المطار وتوصيلات",
+          b4Title: "إقامة وبطاقات",
+          b4Meta: "فنادق، شقق وبطاقات المدن",
+          b5Title: "تيليجرام (@aelatov)",
+          b5Meta: "تحديثات ووصول مباشر عبر تيليجرام",
+          backBtn: "← العودة إلى ÆLATOV"
+        },
+        fr: {
+          dir: "ltr",
+          navServices: "Services / Travaux",
+          navAbout: "À propos",
+          navContact: "Contact / Réserver",
+          sub: "Essentiels de voyage sélectionnés et réservations rapides",
+          b1Title: "Visites & Activités",
+          b1Meta: "Expériences guidées, billets coupe-file & excursions",
+          b2Title: "eSIM Instantanée",
+          b2Meta: "Forfaits data prêts avant l'atterrissage",
+          b3Title: "Vols & Transferts",
+          b3Meta: "Itinéraires, navettes aéroport & correspondances",
+          b4Title: "Hébergements & Pass",
+          b4Meta: "Hôtels, appartements & city pass",
+          b5Title: "Telegram (@aelatov)",
+          b5Meta: "Mises à jour et accès direct Telegram",
+          backBtn: "← Retour à ÆLATOV"
+        },
+        zh: {
+          dir: "ltr",
+          navServices: "服务 / 作品",
+          navAbout: "关于",
+          navContact: "联系 / 预约",
+          sub: "精选出行必备与即时预订",
+          b1Title: "观光与活动",
+          b1Meta: "导览体验、免排队门票与一日游",
+          b2Title: "即时 eSIM",
+          b2Meta: "落地前即可开通的流量套餐",
+          b3Title: "机票与接送",
+          b3Meta: "航线、机场接送与中转衔接",
+          b4Title: "住宿与通票",
+          b4Meta: "酒店、公寓与城市通票",
+          b5Title: "Telegram (@aelatov)",
+          b5Meta: "最新动态与 Telegram 快速入口",
+          backBtn: "← 返回 ÆLATOV"
+        },
+        pt: {
+          dir: "ltr",
+          navServices: "Serviços / Trabalhos",
+          navAbout: "Sobre",
+          navContact: "Contato / Reservar",
+          sub: "Essenciais de viagem selecionados e reservas rápidas",
+          b1Title: "Passeios e Atividades",
+          b1Meta: "Experiências guiadas, ingressos sem fila e bate-volta",
+          b2Title: "eSIM Instantâneo",
+          b2Meta: "Planos de dados prontos antes do pouso",
+          b3Title: "Voos e Transfers",
+          b3Meta: "Rotas, transfer de aeroporto e conexões",
+          b4Title: "Hospedagem e Passes",
+          b4Meta: "Hotéis, apartamentos e passes de cidade",
+          b5Title: "Telegram (@aelatov)",
+          b5Meta: "Atualizações e acesso direto no Telegram",
+          backBtn: "← Voltar para ÆLATOV"
+        }
+      };
 
-    const SECTIONS = {
-      tours: {
-        tag: "ÆLATOV • Experiences",
-        title: "🎟️ Tours & Activities",
-        desc: "Browse curated day tours, cultural walks, and attraction passes with instant mobile confirmation.",
-        items: [
-          "• Skip-the-line landmarks & museum tickets",
-          "• Local guides, food walks & excursion packages",
-          "• Flexible cancellation options on eligible bookings"
-        ],
-        ctaLabel: "Explore Tours & Activities →",
-        ctaHref: "https://www.getyourguide.com",
-        external: true
-      },
-      esim: {
-        tag: "ÆLATOV • Connectivity",
-        title: "📶 Instant eSIM",
-        desc: "Get connected immediately after arrival without hunting for local SIM kiosks or paying roaming surcharges.",
-        items: [
-          "• Country, regional & global data packages",
-          "• Digital setup with no physical SIM swap needed",
-          "• Keep your primary number active while using data"
-        ],
-        ctaLabel: "Get Instant eSIM →",
-        ctaHref: "https://www.airalo.com",
-        external: true
-      },
-      flights: {
-        tag: "ÆLATOV • Transit",
-        title: "✈️ Flights & Transfers",
-        desc: "Compare flight routes and line up smooth airport transfers or point-to-point rides before your trip.",
-        items: [
-          "• One-way, round-trip & multi-city flight search",
-          "• Pre-arranged airport pickups & private transfers",
-          "• Clear route planning from terminal to hotel"
-        ],
-        ctaLabel: "Search Flights & Transfers →",
-        ctaHref: "https://www.aviasales.com",
-        external: true
-      },
-      stays: {
-        tag: "ÆLATOV • Accommodation",
-        title: "🏨 Stays & Passes",
-        desc: "Find hotels, boutique stays, and multi-attraction passes tailored to your dates and budget.",
-        items: [
-          "• Hotels, apartments & short-stay properties",
-          "• City passes & bundled travel perks",
-          "• Easy comparison by location and rating"
-        ],
-        ctaLabel: "Browse Stays & Passes →",
-        ctaHref: "https://www.booking.com",
-        external: true
-      },
-      telegram: {
-        tag: "ÆLATOV • Telegram",
-        title: "✈️ Telegram (@aelatov)",
-        desc: "Open ÆLATOV on Telegram for quick updates, commands, and direct access.",
-        items: [
-          "• Direct bot handle: @aelatov",
-          "• Fast mobile access from Telegram"
-        ],
-        ctaLabel: "Open @aelatov on Telegram →",
-        ctaHref: "https://t.me/aelatov",
-        external: true
-      },
-      services: {
-        tag: "ÆLATOV • Capabilities",
-        title: "Services / Work",
-        desc: "Focused visual, editorial, and travel-curated deliverables built for clarity and fast execution.",
-        items: [
-          "• Visual & Editorial Direction — Minimalist layouts, typographic identity systems & structured campaign assets",
-          "• Video, Photography & Sound — Short-form visual storytelling, scene pacing & atmospheric sound design",
-          "• Travel Bridge & Booking Hub — Direct access to tours, connectivity, transit & stays in one dark hub"
-        ],
-        ctaLabel: "Contact / Book →",
-        ctaHref: "#contact",
-        external: false
-      },
-      about: {
-        tag: "ÆLATOV • Overview",
-        title: "About ÆLATOV",
-        desc: "ÆLATOV brings together clean visual identity, disciplined creative work, and practical travel booking shortcuts without clutter or bloated menus.",
-        items: [
-          "• Built for fast mobile loading and zero visual noise",
-          "• Structured for batch workflows and direct next steps"
-        ],
-        ctaLabel: "See Services / Work →",
-        ctaHref: "#services",
-        external: false
-      },
-      contact: {
-        tag: "ÆLATOV • Direct",
-        title: "Contact / Book",
-        desc: "Share your project brief, dates, or booking inquiry in one direct message.",
-        items: [
-          "• Single direct channel for project & booking inquiries"
-        ],
-        ctaLabel: "Send Direct Inquiry →",
-        ctaHref: "mailto:makav007@gmail.com?subject=%C3%86LATOV%20Inquiry",
-        external: true
-      }
-    };
+      const SECTIONS = {
+        tours: {
+          tag: "ÆLATOV • Experiences",
+          title: "🎟️ Tours & Activities",
+          desc: "Browse curated day tours, cultural walks, and attraction passes with instant mobile confirmation.",
+          items: [
+            "• Skip-the-line landmarks & museum tickets",
+            "• Local guides, food walks & excursion packages",
+            "• Flexible cancellation options on eligible bookings"
+          ],
+          ctaLabel: "Explore Tours & Activities →",
+          ctaHref: "https://www.getyourguide.com",
+          external: true
+        },
+        esim: {
+          tag: "ÆLATOV • Connectivity",
+          title: "📶 Instant eSIM",
+          desc: "Get connected immediately after arrival without hunting for local SIM kiosks or paying roaming surcharges.",
+          items: [
+            "• Country, regional & global data packages",
+            "• Digital setup with no physical SIM swap needed",
+            "• Keep your primary number active while using data"
+          ],
+          ctaLabel: "Get Instant eSIM →",
+          ctaHref: "https://www.airalo.com",
+          external: true
+        },
+        flights: {
+          tag: "ÆLATOV • Transit",
+          title: "✈️ Flights & Transfers",
+          desc: "Compare flight routes and line up smooth airport transfers or point-to-point rides before your trip.",
+          items: [
+            "• One-way, round-trip & multi-city flight search",
+            "• Pre-arranged airport pickups & private transfers",
+            "• Clear route planning from terminal to hotel"
+          ],
+          ctaLabel: "Search Flights & Transfers →",
+          ctaHref: "https://www.aviasales.com",
+          external: true
+        },
+        stays: {
+          tag: "ÆLATOV • Accommodation",
+          title: "🏨 Stays & Passes",
+          desc: "Find hotels, boutique stays, and multi-attraction passes tailored to your dates and budget.",
+          items: [
+            "• Hotels, apartments & short-stay properties",
+            "• City passes & bundled travel perks",
+            "• Easy comparison by location and rating"
+          ],
+          ctaLabel: "Browse Stays & Passes →",
+          ctaHref: "https://www.booking.com",
+          external: true
+        },
+        services: {
+          tag: "ÆLATOV • Capabilities",
+          title: "Services / Work",
+          desc: "Focused visual, editorial, and travel-curated deliverables built for clarity and fast execution.",
+          items: [
+            "• Visual & Editorial Direction — Minimalist layouts, typographic identity systems & structured campaign assets",
+            "• Video, Photography & Sound — Short-form visual storytelling, scene pacing & atmospheric sound design",
+            "• Travel Bridge & Booking Hub — Direct access to tours, connectivity, transit & stays in one dark hub"
+          ],
+          ctaLabel: "Contact / Book →",
+          ctaHref: "#contact",
+          external: false
+        },
+        about: {
+          tag: "ÆLATOV • Overview",
+          title: "About ÆLATOV",
+          desc: "ÆLATOV brings together clean visual identity, disciplined creative work, and practical travel booking shortcuts without clutter or bloated menus.",
+          items: [
+            "• Built for fast mobile loading and zero visual noise",
+            "• Structured for batch workflows and direct next steps"
+          ],
+          ctaLabel: "See Services / Work →",
+          ctaHref: "#services",
+          external: false
+        },
+        contact: {
+          tag: "ÆLATOV • Direct",
+          title: "Contact / Book",
+          desc: "Share your project brief, dates, or booking inquiry in one direct message.",
+          items: [
+            "• Single direct channel for project & booking inquiries"
+          ],
+          ctaLabel: "Send Direct Inquiry →",
+          ctaHref: "mailto:makav007@gmail.com?subject=%C3%86LATOV%20Inquiry",
+          external: true
+        }
+      };
 
-    const hubView = document.getElementById("hubView");
-    const panelView = document.getElementById("panelView");
-    const panelTag = document.getElementById("panelTag");
-    const panelTitle = document.getElementById("panelTitle");
-    const panelDesc = document.getElementById("panelDesc");
-    const panelList = document.getElementById("panelList");
-    const panelCta = document.getElementById("panelCta");
-    const backBtn = document.getElementById("backBtn");
+      const hubView = document.getElementById("hubView");
+      const panelView = document.getElementById("panelView");
+      const panelTag = document.getElementById("panelTag");
+      const panelTitle = document.getElementById("panelTitle");
+      const panelDesc = document.getElementById("panelDesc");
+      const panelList = document.getElementById("panelList");
+      const panelCta = document.getElementById("panelCta");
+      const backBtn = document.getElementById("backBtn");
+      const selectEl = document.getElementById("langSelect");
 
-    function renderHub() {
-      panelView.classList.remove("active");
-      hubView.classList.remove("hidden");
-      document.querySelectorAll(".nav button").forEach((b) => b.classList.remove("active"));
-    }
-
-    function renderSection(key) {
-      const data = SECTIONS[key];
-      if (!data) {
-        renderHub();
-        return;
-      }
-      panelTag.textContent = data.tag;
-      panelTitle.textContent = data.title;
-      panelDesc.textContent = data.desc;
-      panelList.innerHTML = data.items.map((txt) => `<li>${txt}</li>`).join("");
-      panelCta.textContent = data.ctaLabel;
-      panelCta.href = data.ctaHref;
-      if (data.external) {
-        panelCta.setAttribute("target", "_blank");
-        panelCta.setAttribute("rel", "noopener");
-      } else {
-        panelCta.removeAttribute("target");
-        panelCta.removeAttribute("rel");
+      function renderHub() {
+        panelView.classList.remove("active");
+        hubView.classList.remove("hidden");
+        document.querySelectorAll(".nav button").forEach((b) => b.classList.remove("active"));
       }
 
-      hubView.classList.add("hidden");
-      panelView.classList.add("active");
-      document.querySelectorAll(".nav button").forEach((b) => {
-        b.classList.toggle("active", b.getAttribute("data-open") === key);
-      });
-    }
-
-    function openSection(key, push = true) {
-      if (!SECTIONS[key]) return;
-      if (push) {
-        try { history.pushState({ view: key }, "", "#view=" + key); } catch (_) {}
-      }
-      renderSection(key);
-    }
-
-    function showHub() {
-      if (history.state && history.state.view) {
-        history.back();
-      } else {
-        renderHub();
-      }
-    }
-
-    window.addEventListener("popstate", (e) => {
-      const viewKey = e.state && e.state.view ? e.state.view : null;
-      if (viewKey && SECTIONS[viewKey]) {
-        renderSection(viewKey);
-        
+      function renderSection(key) {
+        const data = SECTIONS[key];
+        if (!data) {
+          renderHub();
+          return;
+        }
+        panelTag.textContent =
