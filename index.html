@@ -30,36 +30,32 @@
       color: var(--text);
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", "Noto Sans SC", "Noto Naskh Arabic", sans-serif;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      padding: 20px 16px 36px;
+      padding: 20px 16px 40px;
     }
     .topbar {
       width: 100%;
-      max-width: 540px;
+      max-width: 560px;
       margin: 0 auto 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
     .nav {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
     }
-    .nav button {
-      background: none;
-      border: none;
+    .nav a {
       color: var(--muted);
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      padding: 4px 0;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 4px 2px;
     }
-    .nav button:hover, .nav button.active { color: var(--text); }
+    .nav a:hover, .nav a:focus { color: var(--text); }
     .lang-box {
       display: inline-flex;
       align-items: center;
@@ -69,7 +65,6 @@
       border-radius: 999px;
       padding: 6px 10px;
       font-size: 0.82rem;
-      color: var(--text);
     }
     .lang-box select {
       background: transparent;
@@ -78,16 +73,12 @@
       outline: none;
       font-size: 0.82rem;
       font-weight: 600;
-      cursor: pointer;
     }
-    .lang-box option {
-      background: var(--card);
-      color: var(--text);
-    }
+    .lang-box option { background: var(--card); color: var(--text); }
     .wrap {
       width: 100%;
-      max-width: 480px;
-      margin: auto;
+      max-width: 500px;
+      margin: 0 auto;
     }
     .brand {
       font-size: 2rem;
@@ -99,144 +90,87 @@
     .sub {
       text-align: center;
       color: var(--muted);
-      font-size: 0.9rem;
-      margin-bottom: 24px;
+      font-size: 0.92rem;
+      margin-bottom: 22px;
     }
     .links {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-bottom: 24px;
     }
-    .btn {
-      width: 100%;
-      text-align: left;
+    .card-link {
       display: flex;
       align-items: center;
       justify-content: space-between;
       background: var(--card);
       color: var(--text);
       text-decoration: none;
-      padding: 16px 18px;
+      padding: 15px 18px;
       border-radius: 12px;
       border: 1px solid var(--border);
       font-weight: 600;
       font-size: 1rem;
-      cursor: pointer;
-      transition: transform 0.12s ease, border-color 0.12s ease;
     }
-    .btn:hover {
-      border-color: var(--accent);
-      transform: translateY(-1px);
-    }
-    .btn-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .card-link:hover { border-color: var(--accent); }
+    .left { display: flex; align-items: center; gap: 10px; }
+    .meta { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 400; margin-top: 2px; }
+    .arrow { color: var(--muted); }
     .tg-badge {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--tg);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
+      width: 22px; height: 22px; border-radius: 50%; background: var(--tg);
+      display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
-    .tg-badge svg {
-      width: 13px;
-      height: 13px;
-      fill: #ffffff;
-    }
-    .meta {
-      display: block;
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-weight: 400;
-      margin-top: 3px;
-    }
-    .arrow { color: var(--muted); font-size: 1.1rem; }
-
-    .panel {
-      display: none;
+    .tg-badge svg { width: 13px; height: 13px; fill: #fff; }
+    .section-box {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 14px;
+      scroll-margin-top: 16px;
     }
-    .panel.active { display: block; }
-    .hub.hidden { display: none; }
-    .back-btn {
-      background: none;
-      border: none;
-      color: var(--muted);
-      font-size: 0.9rem;
-      cursor: pointer;
-      margin-bottom: 16px;
-      padding: 0;
+    .section-box h2 { font-size: 1.2rem; margin-bottom: 8px; }
+    .section-box p { color: var(--muted); font-size: 0.92rem; line-height: 1.55; margin-bottom: 12px; }
+    .section-box ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+    .section-box li {
+      background: var(--bg); border: 1px solid var(--border); border-radius: 8px;
+      padding: 10px 12px; font-size: 0.88rem; line-height: 1.45;
     }
-    .back-btn:hover { color: var(--text); }
-    .tag {
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-    .panel h1 { font-size: 1.45rem; margin-bottom: 10px; }
-    .panel p { color: var(--muted); font-size: 0.94rem; line-height: 1.55; margin-bottom: 18px; }
-    .bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-    .bullets li {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-      font-size: 0.9rem;
-      line-height: 1.45;
-    }
-    .cta-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .cta {
-      display: block;
-      text-align: center;
+    .cta-btn {
+      display: inline-block;
       background: var(--accent);
       color: var(--bg);
       text-decoration: none;
-      padding: 14px 18px;
-      border-radius: 10px;
+      padding: 11px 16px;
+      border-radius: 9px;
       font-weight: 700;
+      font-size: 0.9rem;
+      margin-right: 8px;
+      margin-top: 4px;
     }
-    .cta-secondary {
-      display: block;
-      text-align: center;
+    .cta-ghost {
+      display: inline-block;
       background: var(--bg);
       color: var(--text);
       border: 1px solid var(--border);
       text-decoration: none;
-      padding: 12px 16px;
-      border-radius: 10px;
+      padding: 11px 16px;
+      border-radius: 9px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
+      margin-top: 4px;
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <nav class="nav" aria-label="Primary">
-      <button type="button" data-open="services" data-i18n="navServices">Services / Work</button>
-      <button type="button" data-open="about" data-i18n="navAbout">About</button>
-      <button type="button" data-open="contact" data-i18n="navContact">Contact / Book</button>
+      <a href="#services" data-i18n="navServices">Services / Work</a>
+      <a href="#about" data-i18n="navAbout">About</a>
+      <a href="#contact" data-i18n="navContact">Contact</a>
+      <a href="#book" data-i18n="navBook">Book</a>
     </nav>
-    <label class="lang-box" for="langSelect" aria-label="Language">
+    <label class="lang-box" for="langSelect">
       <span>🌐</span>
       <select id="langSelect">
         <option value="en">English</option>
@@ -252,316 +186,250 @@
   </header>
 
   <main class="wrap">
-    <section id="hubView" class="hub">
-      <div class="brand">ÆLATOV</div>
-      <p class="sub" data-i18n="sub">Curated travel essentials &amp; instant bookings</p>
-      <div class="links">
-        <button type="button" class="btn" data-open="tours">
-          <div class="btn-left">
-            <span>🎟️</span>
-            <div>
-              <span data-i18n="b1Title">Tours &amp; Activities</span>
-              <span class="meta" data-i18n="b1Meta">Guided experiences, skip-the-line tickets &amp; day trips</span>
-            </div>
-          </div>
-          <span class="arrow">→</span>
-        </button>
+    <div class="brand">ÆLATOV</div>
+    <p class="sub" data-i18n="sub">Services, studio work &amp; travel booking links</p>
 
-        <button type="button" class="btn" data-open="esim">
-          <div class="btn-left">
-            <span>📶</span>
-            <div>
-              <span data-i18n="b2Title">Instant eSIM</span>
-              <span class="meta" data-i18n="b2Meta">Mobile data plans ready before you land</span>
-            </div>
+    <div class="links">
+      <a class="card-link" href="https://autoeurope.tp.st/3bUUQzkm" target="_blank" rel="noopener noreferrer">
+        <div class="left">
+          <span>🚗</span>
+          <div>
+            <span data-i18n="bCarTitle">Car Hire — AutoEurope</span>
+            <span class="meta" data-i18n="bCarMeta">Tracked booking link for car rentals &amp; pickups</span>
           </div>
-          <span class="arrow">→</span>
-        </button>
+        </div>
+        <span class="arrow">→</span>
+      </a>
 
-        <button type="button" class="btn" data-open="flights">
-          <div class="btn-left">
-            <span>🚗</span>
-            <div>
-              <span data-i18n="b3Title">Car Hire &amp; Transfers</span>
-              <span class="meta" data-i18n="b3Meta">AutoEurope car rentals, routes &amp; airport pickups</span>
-            </div>
+      <a class="card-link" href="#book">
+        <div class="left">
+          <span>📅</span>
+          <div>
+            <span data-i18n="bBookTitle">Book &amp; Travel Options</span>
+            <span class="meta" data-i18n="bBookMeta">Jump to booking options &amp; direct support</span>
           </div>
-          <span class="arrow">→</span>
-        </button>
+        </div>
+        <span class="arrow">→</span>
+      </a>
 
-        <button type="button" class="btn" data-open="stays">
-          <div class="btn-left">
-            <span>🏨</span>
-            <div>
-              <span data-i18n="b4Title">Stays &amp; Passes</span>
-              <span class="meta" data-i18n="b4Meta">Hotels, apartments &amp; city passes</span>
-            </div>
+      <a class="card-link" href="https://t.me/aelatov" target="_blank" rel="noopener noreferrer">
+        <div class="left">
+          <span class="tg-badge" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l16.01-6.16c.73-.3 1.4.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+            </svg>
+          </span>
+          <div>
+            <span data-i18n="bTgTitle">Telegram (@aelatov)</span>
+            <span class="meta" data-i18n="bTgMeta">Official ÆLATOV bot &amp; channel updates</span>
           </div>
-          <span class="arrow">→</span>
-        </button>
+        </div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
 
-        <a class="btn" href="https://t.me/aelatov" target="_blank" rel="noopener noreferrer">
-          <div class="btn-left">
-            <span class="tg-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l16.01-6.16c.73-.3 1.4.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
-              </svg>
-            </span>
-            <div>
-              <span data-i18n="b5Title">Telegram (@aelatov)</span>
-              <span class="meta" data-i18n="b5Meta">Updates, quick access &amp; direct Telegram hub</span>
-            </div>
-          </div>
-          <span class="arrow">→</span>
-        </a>
-      </div>
+    <section id="services" class="section-box">
+      <h2 data-i18n="sTitle">Services / Work</h2>
+      <p data-i18n="sDesc">What we deliver across visual creative work, media production, and travel booking access.</p>
+      <ul>
+        <li data-i18n="s1">Visual &amp; Editorial Direction — Clean brand layouts, typography, and presentation assets.</li>
+        <li data-i18n="s2">Video, Photography &amp; Sound — Visual storytelling, editing flow, and atmospheric sound design.</li>
+        <li data-i18n="s3">Travel &amp; Booking Hub — Curated travel links and direct booking pathways in one fast page.</li>
+      </ul>
+      <a class="cta-btn" href="#book" data-i18n="sCta">Go to Book →</a>
     </section>
 
-    <section id="panelView" class="panel" aria-live="polite">
-      <button type="button" id="backBtn" class="back-btn" data-i18n="backBtn">← Back to ÆLATOV</button>
-      <div id="panelTag" class="tag"></div>
-      <h1 id="panelTitle"></h1>
-      <p id="panelDesc"></p>
-      <ul id="panelList" class="bullets"></ul>
-      <div id="panelCtas" class="cta-stack"></div>
+    <section id="about" class="section-box">
+      <h2 data-i18n="aTitle">About</h2>
+      <p data-i18n="aDesc">ÆLATOV is built to be direct, fast on mobile, and free of clutter—connecting creative services with practical booking tools.</p>
+      <ul>
+        <li data-i18n="a1">Clear structure with zero bloated menus or confusing extra steps.</li>
+        <li data-i18n="a2">Easy to share directly with friends, clients, and travelers.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section-box">
+      <h2 data-i18n="cTitle">Contact</h2>
+      <p data-i18n="cDesc">Our service &amp; support team handles inquiries, questions, and booking requests directly.</p>
+      <ul>
+        <li>Support &amp; Service Desk: <strong>makav007@gmail.com</strong></li>
+        <li data-i18n="c1">Include your dates, service details, or question so our team can assist quickly.</li>
+      </ul>
+      <a class="cta-btn" href="mailto:makav007@gmail.com?subject=%C3%86LATOV%20Support%20%26%20Service%20Inquiry" data-i18n="cCta">Email Support (makav007@gmail.com)</a>
+    </section>
+
+    <section id="book" class="section-box">
+      <h2 data-i18n="bTitle">Book</h2>
+      <p data-i18n="bDesc">Ready to book or request a service? Use the direct booking and partner links below.</p>
+      <ul>
+        <li data-i18n="b1">Car Hire (AutoEurope): Book rental vehicles via our tracked partner link.</li>
+        <li data-i18n="b2">Service &amp; Custom Bookings: Send your request to makav007@gmail.com or message @aelatov on Telegram.</li>
+      </ul>
+      <a class="cta-btn" href="https://autoeurope.tp.st/3bUUQzkm" target="_blank" rel="noopener noreferrer" data-i18n="bCta1">Book Car Hire (AutoEurope) →</a>
+      <a class="cta-ghost" href="mailto:makav007@gmail.com?subject=%C3%86LATOV%20Booking%20Request" data-i18n="bCta2">Request Booking via Email</a>
     </section>
   </main>
 
   <script>
     (function () {
-      const I18N = {
+      const DICT = {
         en: {
           dir: "ltr",
-          navServices: "Services / Work",
-          navAbout: "About",
-          navContact: "Contact / Book",
-          sub: "Curated travel essentials & instant bookings",
-          b1Title: "Tours & Activities",
-          b1Meta: "Guided experiences, skip-the-line tickets & day trips",
-          b2Title: "Instant eSIM",
-          b2Meta: "Mobile data plans ready before you land",
-          b3Title: "Car Hire & Transfers",
-          b3Meta: "AutoEurope car rentals, routes & airport pickups",
-          b4Title: "Stays & Passes",
-          b4Meta: "Hotels, apartments & city passes",
-          b5Title: "Telegram (@aelatov)",
-          b5Meta: "Updates, quick access & direct Telegram hub",
-          backBtn: "← Back to ÆLATOV"
+          navServices: "Services / Work", navAbout: "About", navContact: "Contact", navBook: "Book",
+          sub: "Services, studio work & travel booking links",
+          bCarTitle: "Car Hire — AutoEurope", bCarMeta: "Tracked booking link for car rentals & pickups",
+          bBookTitle: "Book & Travel Options", bBookMeta: "Jump to booking options & direct support",
+          bTgTitle: "Telegram (@aelatov)", bTgMeta: "Official ÆLATOV bot & channel updates",
+          sTitle: "Services / Work",
+          sDesc: "What we deliver across visual creative work, media production, and travel booking access.",
+          s1: "Visual & Editorial Direction — Clean brand layouts, typography, and presentation assets.",
+          s2: "Video, Photography & Sound — Visual storytelling, editing flow, and atmospheric sound design.",
+          s3: "Travel & Booking Hub — Curated travel links and direct booking pathways in one fast page.",
+          sCta: "Go to Book →",
+          aTitle: "About",
+          aDesc: "ÆLATOV is built to be direct, fast on mobile, and free of clutter—connecting creative services with practical booking tools.",
+          a1: "Clear structure with zero bloated menus or confusing extra steps.",
+          a2: "Easy to share directly with friends, clients, and travelers.",
+          cTitle: "Contact",
+          cDesc: "Our service & support team handles inquiries, questions, and booking requests directly.",
+          c1: "Include your dates, service details, or question so our team can assist quickly.",
+          cCta: "Email Support (makav007@gmail.com)",
+          bTitle: "Book",
+          bDesc: "Ready to book or request a service? Use the direct booking and partner links below.",
+          b1: "Car Hire (AutoEurope): Book rental vehicles via our tracked partner link.",
+          b2: "Service & Custom Bookings: Send your request to makav007@gmail.com or message @aelatov on Telegram.",
+          bCta1: "Book Car Hire (AutoEurope) →",
+          bCta2: "Request Booking via Email"
         },
         ko: {
           dir: "ltr",
-          navServices: "서비스 / 작업",
-          navAbout: "소개",
-          navContact: "문의 / 예약",
-          sub: "엄선된 여행 필수 아이템과 즉시 예약",
-          b1Title: "투어 및 액티비티",
-          b1Meta: "가이드 투어, 우선 입장권 및 당일 여행",
-          b2Title: "즉시 eSIM",
-          b2Meta: "도착 전 준비하는 모바일 데이터 요금제",
-          b3Title: "렌터카 및 이동",
-          b3Meta: "AutoEurope 렌터카, 노선 및 공항 픽업",
-          b4Title: "숙소 및 패스",
-          b4Meta: "호텔, 아파트 및 도시 패스",
-          b5Title: "텔레그램 (@aelatov)",
-          b5Meta: "업데이트 및 빠른 텔레그램 연결",
-          backBtn: "← ÆLATOV로 돌아가기"
+          navServices: "서비스 / 작업", navAbout: "소개", navContact: "문의", navBook: "예약",
+          sub: "서비스, 스튜디오 작업 및 여행 예약 링크",
+          bCarTitle: "렌터카 — AutoEurope", bCarMeta: "렌터카 및 픽업 예약 링크",
+          bBookTitle: "예약 및 여행 옵션", bBookMeta: "예약 및 직접 문의로 이동",
+          bTgTitle: "텔레그램 (@aelatov)", bTgMeta: "공식 ÆLATOV 봇 및 채널 소식",
+          sTitle: "서비스 / 작업",
+          sDesc: "비주얼 크리에이티브, 미디어 제작 및 여행 예약 연결을 제공합니다.",
+          s1: "비주얼 및 에디토리얼 디렉션 — 깔끔한 레이아웃, 타이포그래피 및 브랜드 에셋.",
+          s2: "비디오, 사진 및 사운드 — 스토리텔링 편집과 분위기 있는 사운드 디자인.",
+          s3: "여행 및 예약 허브 — 한 페이지에서 빠르고 간편하게 연결되는 예약 링크.",
+          sCta: "예약으로 이동 →",
+          aTitle: "소개",
+          aDesc: "ÆLATOV는 모바일에서 빠르게 열리고 군더더기 없이 핵심만 담은 서비스 및 예약 허브입니다.",
+          a1: "복잡한 메뉴 없이 직관적인 구성.",
+          a2: "친구, 클라이언트 및 여행자에게 바로 공유하기 좋습니다.",
+          cTitle: "문의",
+          cDesc: "서비스 및 지원 팀이 문의 사항과 예약 요청을 직접 안내해 드립니다.",
+          c1: "일정, 원하는 서비스 내용 또는 질문을 남겨주시면 빠르게 도와드립니다.",
+          cCta: "지원 팀 이메일 (makav007@gmail.com)",
+          bTitle: "예약",
+          bDesc: "예약 또는 서비스 요청을 원하시면 아래 링크를 이용하세요.",
+          b1: "렌터카 (AutoEurope): 파트너 링크를 통해 차량을 예약하세요.",
+          b2: "서비스 및 맞춤 예약: makav007@gmail.com 또는 텔레그램 @aelatov로 문의하세요.",
+          bCta1: "렌터카 예약 (AutoEurope) →",
+          bCta2: "이메일로 예약 요청"
         },
         ru: {
           dir: "ltr",
-          navServices: "Услуги / Работы",
-          navAbout: "О проекте",
-          navContact: "Контакт / Бронь",
-          sub: "Отобранные essentials для поездок и быстрое бронирование",
-          b1Title: "Экскурсии и активности",
-          b1Meta: "Гиды, билеты без очереди и однодневные поездки",
-          b2Title: "Мгновенная eSIM",
-          b2Meta: "Мобильный интернет до прилёта",
-          b3Title: "Авто и трансферы",
-          b3Meta: "Аренда авто AutoEurope, маршруты и трансферы",
-          b4Title: "Жильё и пассы",
-          b4Meta: "Отели, апартаменты и городские карты",
-          b5Title: "Telegram (@aelatov)",
-          b5Meta: "Новости, быстрый доступ и хаб в Telegram",
-          backBtn: "← Назад в ÆLATOV"
+          navServices: "Услуги / Работы", navAbout: "О нас", navContact: "Контакты", navBook: "Бронь",
+          sub: "Услуги, студийные работы и ссылки для бронирования",
+          bCarTitle: "Аренда авто — AutoEurope", bCarMeta: "Партнёрская ссылка на прокат авто",
+          bBookTitle: "Бронирование и опции", bBookMeta: "Перейти к бронированию и поддержке",
+          bTgTitle: "Telegram (@aelatov)", bTgMeta: "Бот и канал ÆLATOV",
+          sTitle: "Услуги / Работы",
+          sDesc: "Визуальная работа, медиапродакшн и быстрый доступ к бронированию поездок.",
+          s1: "Визуальное и редакционное направление — чистая типографика и структура.",
+          s2: "Видео, фото и звук — монтаж, темп сцен и саунд-дизайн.",
+          s3: "Хаб бронирования — ключевые ссылки в одном удобном окне.",
+          sCta: "К бронированию →",
+          aTitle: "О нас",
+          aDesc: "ÆLATOV создан без лишнего шума — быстрый доступ к услугам и бронированию со смартфона.",
+          a1: "Понятная навигация без перегруженных меню.",
+          a2: "Легко отправить друзьям, клиентам и путешественникам.",
+          cTitle: "Контакты",
+          cDesc: "Наша служба поддержки и координации отвечает на запросы напрямую.",
+          c1: "Укажите даты, детали задачи или вопрос для быстрого ответа.",
+          cCta: "Написать в поддержку (makav007@gmail.com)",
+          bTitle: "Бронь",
+          bDesc: "Для бронирования или заявки на услугу воспользуйтесь кнопками ниже.",
+          b1: "Аренда авто (AutoEurope): бронирование через партнёрскую ссылку.",
+          b2: "Заявки на услуги: пишите на makav007@gmail.com или в Telegram @aelatov.",
+          bCta1: "Забронировать авто (AutoEurope) →",
+          bCta2: "Запрос брони по почте"
         },
         es: {
           dir: "ltr",
-          navServices: "Servicios / Trabajo",
-          navAbout: "Acerca de",
-          navContact: "Contacto / Reservar",
-          sub: "Esenciales de viaje seleccionados y reservas al instante",
-          b1Title: "Tours y Actividades",
-          b1Meta: "Experiencias guiadas, entradas sin fila y excursiones",
-          b2Title: "eSIM Instantánea",
-          b2Meta: "Planes de datos listos antes de aterrizar",
-          b3Title: "Autos y Traslados",
-          b3Meta: "Alquiler AutoEurope, rutas y traslados",
-          b4Title: "Alojamientos y Pases",
-          b4Meta: "Hoteles, apartamentos y pases urbanos",
-          b5Title: "Telegram (@aelatov)",
-          b5Meta: "Novedades y acceso directo en Telegram",
-          backBtn: "← Volver a ÆLATOV"
+          navServices: "Servicios / Trabajo", navAbout: "Acerca de", navContact: "Contacto", navBook: "Reservar",
+          sub: "Servicios, trabajo creativo y enlaces de reserva",
+          bCarTitle: "Alquiler de Autos — AutoEurope", bCarMeta: "Enlace de reserva para alquiler de autos",
+          bBookTitle: "Reservar y Opciones", bBookMeta: "Ir a reservas y soporte directo",
+          bTgTitle: "Telegram (@aelatov)", bTgMeta: "Bot y canal oficial de ÆLATOV",
+          sTitle: "Servicios / Trabajo",
+          sDesc: "Dirección visual, producción multimedia y acceso rápido a reservas de viaje.",
+          s1: "Dirección visual y editorial — Diseño limpio, tipografía y piezas estructuradas.",
+          s2: "Video, fotografía y sonido — Ritmo visual y diseño de sonido.",
+          s3: "Hub de reservas — Enlaces claros y directos en una sola página.",
+          sCta: "Ir a Reservar →",
+          aTitle: "Acerca de",
+          aDesc: "ÆLATOV está pensado para cargarse rápido en móvil y mantener todo claro y sin rodeos.",
+          a1: "Estructura directa sin menús confusos.",
+          a2: "Fácil de compartir con amigos, clientes y viajeros.",
+          cTitle: "Contacto",
+          cDesc: "Nuestro equipo de soporte y servicio atiende consultas y reservas directamente.",
+          c1: "Indica fechas, detalles del servicio o tu consulta para responderte pronto.",
+          cCta: "Soporte por correo (makav007@gmail.com)",
+          bTitle: "Reservar",
+          bDesc: "Usa las opciones siguientes para reservar o solicitar un servicio.",
+          b1: "Alquiler de autos (AutoEurope): reserva vehículos desde el enlace asociado.",
+          b2: "Servicios y reservas: escribe a makav007@gmail.com o a @aelatov en Telegram.",
+          bCta1: "Reservar Auto (AutoEurope) →",
+          bCta2: "Solicitar reserva por correo"
         },
         ar: {
           dir: "rtl",
-          navServices: "الخدمات / الأعمال",
-          navAbout: "نبذة عنا",
-          navContact: "تواصل / احجز",
-          sub: "أساسيات السفر المختارة وحجوزات فورية",
-          b1Title: "جولات وأنشطة",
-          b1Meta: "تجارب بإرشاد، تذاكر دخول سريع ورحلات يومية",
-          b2Title: "شريحة eSIM فورية",
-          b2Meta: "باقات بيانات جاهزة قبل الوصول",
-          b3Title: "تأجير سيارات وتنقلات",
-          b3Meta: "تأجير AutoEurope، مسارات وتوصيلات",
-          b4Title: "إقامة وبطاقات",
-          b4Meta: "فنادق، شقق وبطاقات المدن",
-          b5Title: "تيليجرام (@aelatov)",
-          b5Meta: "تحديثات ووصول مباشر عبر تيليجرام",
-          backBtn: "← العودة إلى ÆLATOV"
+          navServices: "الخدمات / الأعمال", navAbout: "حول", navContact: "تواصل", navBook: "احجز",
+          sub: "الخدمات والأعمال الإبداعية وروابط الحجز",
+          bCarTitle: "تأجير سيارات — AutoEurope", bCarMeta: "رابط حجز لتأجير السيارات",
+          bBookTitle: "الحجز وخيارات السفر", bBookMeta: "الانتقال إلى الحجز والدعم المباشر",
+          bTgTitle: "تيليجرام (@aelatov)", bTgMeta: "بوت وقناة ÆLATOV الرسمية",
+          sTitle: "الخدمات / الأعمال",
+          sDesc: "نقدم أعمالاً بصرية وإنتاجاً إعلامياً وروابط حجز سفر واضحة.",
+          s1: "إخراج بصري وتحريري — تنسيق واضح وخطوط وهوية منظمة.",
+          s2: "فيديو وتصوير وصوت — سرد بصري وتصميم صوتي متقن.",
+          s3: "مركز الحجز — وصول سريع ومباشر في صفحة واحدة.",
+          sCta: "الانتقال إلى الحجز ←",
+          aTitle: "حول",
+          aDesc: "صُمم ÆLATOV ليكون سريعاً على الجوال وواضحاً دون تعقيد.",
+          a1: "واجهة بسيطة ومباشرة دون قوائم مزدحمة.",
+          a2: "سهل المشاركة مع الأصدقاء والعملاء والمسافرين.",
+          cTitle: "تواصل",
+          cDesc: "فريق الخدمة والدعم يتابع الاستفسارات وطلبات الحجز مباشرة.",
+          c1: "اذكر التواريخ أو تفاصيل الخدمة أو سؤالك للرد السريع.",
+          cCta: "مراسلة الدعم (makav007@gmail.com)",
+          bTitle: "احجز",
+          bDesc: "للحجز أو طلب خدمة، استخدم الروابط المباشرة أدناه.",
+          b1: "تأجير السيارات (AutoEurope): احجز سيارتك عبر الرابط الشريك.",
+          b2: "الخدمات والحجوزات الخاصة: راسل makav007@gmail.com أو @aelatov على تيليجرام.",
+          bCta1: "احجز سيارة (AutoEurope) ←",
+          bCta2: "طلب حجز عبر البريد"
         },
         fr: {
           dir: "ltr",
-          navServices: "Services / Travaux",
-          navAbout: "À propos",
-          navContact: "Contact / Réserver",
-          sub: "Essentiels de voyage sélectionnés et réservations rapides",
-          b1Title: "Visites & Activités",
-          b1Meta: "Expériences guidées, billets coupe-file & excursions",
-          b2Title: "eSIM Instantanée",
-          b2Meta: "Forfaits data prêts avant l'atterrissage",
-          b3Title: "Voitures & Transferts",
-          b3Meta: "Location AutoEurope, itinéraires & transferts",
-          b4Title: "Hébergements & Pass",
-          b4Meta: "Hôtels, appartements & city pass",
-          b5Title: "Telegram (@aelatov)",
-          b5Meta: "Mises à jour et accès direct Telegram",
-          backBtn: "← Retour à ÆLATOV"
-        },
-        zh: {
-          dir: "ltr",
-          navServices: "服务 / 作品",
-          navAbout: "关于",
-          navContact: "联系 / 预约",
-          sub: "精选出行必备与即时预订",
-          b1Title: "观光与活动",
-          b1Meta: "导览体验、免排队门票与一日游",
-          b2Title: "即时 eSIM",
-          b2Meta: "落地前即可开通的流量套餐",
-          b3Title: "租车与接送",
-          b3Meta: "AutoEurope 租车、路线与机场接送",
-          b4Title: "住宿与通票",
-          b4Meta: "酒店、公寓与城市通票",
-          b5Title: "Telegram (@aelatov)",
-          b5Meta: "最新动态与 Telegram 快速入口",
-          backBtn: "← 返回 ÆLATOV"
-        },
-        pt: {
-          dir: "ltr",
-          navServices: "Serviços / Trabalhos",
-          navAbout: "Sobre",
-          navContact: "Contato / Reservar",
-          sub: "Essenciais de viagem selecionados e reservas rápidas",
-          b1Title: "Passeios e Atividades",
-          b1Meta: "Experiências guiadas, ingressos sem fila e bate-volta",
-          b2Title: "eSIM Instantâneo",
-          b2Meta: "Planos de dados prontos antes do pouso",
-          b3Title: "Carros e Transfers",
-          b3Meta: "Aluguel AutoEurope, rotas e transfers",
-          b4Title: "Hospedagem e Passes",
-          b4Meta: "Hotéis, apartamentos e passes de cidade",
-          b5Title: "Telegram (@aelatov)",
-          b5Meta: "Atualizações e acesso direto no Telegram",
-          backBtn: "← Voltar para ÆLATOV"
-        }
-      };
-
-      const SECTIONS = {
-        tours: {
-          tag: "ÆLATOV • Experiences",
-          title: "🎟️ Tours & Activities",
-          desc: "Browse curated day tours, cultural walks, and attraction passes with instant mobile confirmation.",
-          items: [
-            "• Skip-the-line landmarks & museum tickets",
-            "• Local guides, food walks & excursion packages",
-            "• Flexible cancellation options on eligible bookings"
-          ],
-          ctas: [
-            { label: "Explore Tours & Activities →", href: "https://www.getyourguide.com", external: true }
-          ]
-        },
-        esim: {
-          tag: "ÆLATOV • Connectivity",
-          title: "📶 Instant eSIM",
-          desc: "Get connected immediately after arrival without hunting for local SIM kiosks or paying roaming surcharges.",
-          items: [
-            "• Country, regional & global data packages",
-            "• Digital setup with no physical SIM swap needed",
-            "• Keep your primary number active while using data"
-          ],
-          ctas: [
-            { label: "Get Instant eSIM →", href: "https://www.airalo.com", external: true }
-          ]
-        },
-        flights: {
-          tag: "ÆLATOV • Car Hire & Transit",
-          title: "🚗 Car Hire & Transfers",
-          desc: "Book rental cars through AutoEurope or plan smooth airport pickups and travel connections.",
-          items: [
-            "• AutoEurope car rental bookings & pickup planning",
-            "• Clear route planning from terminal to hotel",
-            "• Direct access to partner booking pages"
-          ],
-          ctas: [
-            { label: "Book Car Hire on AutoEurope →", href: "https://autoeurope.tp.st/3bUUQzkm", external: true }
-          ]
-        },
-        stays: {
-          tag: "ÆLATOV • Accommodation",
-          title: "🏨 Stays & Passes",
-          desc: "Find hotels, boutique stays, and multi-attraction passes tailored to your dates and budget.",
-          items: [
-            "• Hotels, apartments & short-stay properties",
-            "• City passes & bundled travel perks",
-            "• Easy comparison by location and rating"
-          ],
-          ctas: [
-            { label: "Browse Stays & Passes →", href: "https://www.booking.com", external: true }
-          ]
-        },
-        services: {
-          tag: "ÆLATOV • Capabilities",
-          title: "Services / Work",
-          desc: "Clean visual direction, creative media production, and curated travel booking access under one roof.",
-          items: [
-            "• Visual & Editorial Direction — Minimalist layouts, clean typography, and structured brand assets.",
-            "• Video, Photography & Sound — Visual pacing, scene composition, and atmospheric sound design.",
-            "• Travel & Booking Access — Curated travel links, AutoEurope car hire, and fast mobile navigation."
-          ],
-          ctas: [
-            { label: "Go to Book →", href: "#/view/contact", external: false }
-          ]
-        },
-        about: {
-          tag: "ÆLATOV • Overview",
-          title: "About ÆLATOV",
-          desc: "ÆLATOV is built around clarity, zero clutter, and practical access—combining creative work with direct travel essentials.",
-          items: [
-            "• Direct & Minimal — Built to load fast on mobile without heavy menus or distracting noise.",
-            "• Practical Structure — Clear sections for Services / Work, About, Contact, and Book."
-          ],
-          ctas: [
-            { label: "View Services / Work →", href: "#/view/services", external: false }
-          ]
-        },
-        contact: {
-          tag: "ÆLATOV • Support & Booking",
-          title: "Contact & Book",
-          desc: "Need support, have a question about a service, or want to book? Reach our support and booking desk directly.",
-          items: [
-            "• Support & Inquiries: makav007@gmail.com — Send your message, dates, or service request for a direct reply.",
-            "• Booking Desk: Use the booking action below to start a request or jump to travel & car hire booking."
-          ],
-          ctas: [
-            { label: "Book / Email Support (makav007@gmail.com) →", href: "mailto:makav007@gmail.com?subject=%C3%86LATOV%20Booking%20%26%20Support%20Request", external: true },
-            { label: "Book Car Hire (AutoEurope) →", href: "https://autoeurope.tp.st/3bUUQzkm", external: true, secondary: 
+          navServices: "Services / Travaux", navAbout: "À propos", navContact: "Contact", navBook: "Réserver",
+          sub: "Services, créations et liens de réservation",
+          bCarTitle: "Location Auto — AutoEurope", bCarMeta: "Lien de réservation pour location de voiture",
+          bBookTitle: "Réserver & Options", bBookMeta: "Accéder aux réservations et au support",
+          bTgTitle: "Telegram (@aelatov)", bTgMeta: "Bot et canal officiel ÆLATOV",
+          sTitle: "Services / Travaux",
+          sDesc: "Direction visuelle, production média et accès direct aux réservations.",
+          s1: "Direction visuelle & éditoriale — Mise en page claire et typographie soignée.",
+          s2: "Vidéo, photo & son — Montage fluide et design sonore.",
+          s3: "Hub de réservation — Liens essentiels réunis sur une page rapide.",
+          sCta: "Aller à Réserver →",
+          aTitle: "À propos",
+          aDesc: "ÆLATOV mise sur la clarté et la rapidité mobile, sans menus superflus.",
+          a1: "Structure simple et directe.",
+          a2: "Facile à partager avec vos proches, clients et voyageurs.",
+          cTitle: "Contact",
+          cDesc: "Notre équipe support et service traite vos demandes et réservations.",
+          c1: "Précisez vos date
